@@ -5,6 +5,15 @@ public class LinkedList {
     private Node front;
     private Node tail;
 
+    public class Iterator {
+
+        public type field;
+
+        public type method(type) {
+
+        }
+    }
+
     public void add(Student student) {
 
     }
