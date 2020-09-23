@@ -7,11 +7,21 @@ public class LinkedList {
     private Node front;
     private Node tail;
 
-    public class Iterator<type> {
+    public enum InsertPosition {
+        BEFORE,
+        AFTER
+    }
 
-        public type field;
+    public class Iterator {
 
-        public type method(type type) {
+        public Node currentNode;
+
+
+        public boolean hasNext() {
+            return false;
+        }
+
+        public Student next() {
             return null;
         }
     }
@@ -40,7 +50,7 @@ public class LinkedList {
         return null;
     }
 
-    public void insert(Student reference, Student newStudent) {
+    public void insert(Student reference, Student newStudent, InsertPosition insertPosition) {
 
     }
 }
