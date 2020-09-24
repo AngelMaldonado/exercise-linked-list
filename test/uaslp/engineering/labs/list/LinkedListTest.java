@@ -9,20 +9,23 @@ public class LinkedListTest {
 
 
     @Test
+    /** Test when list is initialized **/
     public void givenNewList_whenSize_thenZeroIsReturned() {
         // Given:
         LinkedList list = new LinkedList();
 
         // When:
-        int size = list.size();
+        int size = list.getSize();
 
         // Then:
         assertEquals(0, size);
     }
 
     @Test
+    /** When a new element is inserted at the new list **/
     public void givenNewList_whenAdd_thenElementIsInserted() {
         // Given:
+        /** Initialize a new list and a student **/
         LinkedList list = new LinkedList();
         Student student = new Student("Ivan");
 
@@ -30,13 +33,14 @@ public class LinkedListTest {
         list.add(student);
 
         // Then:
-        assertEquals(1, list.size());
+        assertEquals(1, list.getSize());
         assertEquals(list.getAt(0).getName(), "Ivan");
     }
 
     @Test
     public void givenAListWith3Elements_whenDeleteFirst_thenElementIsDeleted() {
         // Given:
+        /** Initialize the list and add the 3 students **/
         LinkedList list = new LinkedList();
 
         list.add(new Student("Ivan"));
@@ -47,7 +51,7 @@ public class LinkedListTest {
         list.delete(0);
 
         // Then:
-        assertEquals(2, list.size());
+        assertEquals(2, list.getSize());
         assertEquals(list.getAt(0).getName(), "Israel");
         assertEquals(list.getAt(1).getName(), "Francisco");
     }
@@ -65,7 +69,7 @@ public class LinkedListTest {
         list.delete(2);
 
         // Then:
-        assertEquals(2, list.size());
+        assertEquals(2, list.getSize());
         assertEquals(list.getAt(0).getName(), "Ivan");
         assertEquals(list.getAt(1).getName(), "Israel");
     }
@@ -83,7 +87,7 @@ public class LinkedListTest {
         list.delete(1);
 
         // Then:
-        assertEquals(2, list.size());
+        assertEquals(2, list.getSize());
         assertEquals(list.getAt(0).getName(), "Ivan");
         assertEquals(list.getAt(1).getName(), "Francisco");
     }
@@ -101,7 +105,7 @@ public class LinkedListTest {
         list.delete(-1);
 
         // Then:
-        assertEquals(3, list.size());
+        assertEquals(3, list.getSize());
         assertEquals(list.getAt(0).getName(), "Ivan");
         assertEquals(list.getAt(1).getName(), "Israel");
         assertEquals(list.getAt(2).getName(), "Francisco");
@@ -120,7 +124,7 @@ public class LinkedListTest {
         list.delete(4);
 
         // Then:
-        assertEquals(3, list.size());
+        assertEquals(3, list.getSize());
         assertEquals(list.getAt(0).getName(), "Ivan");
         assertEquals(list.getAt(1).getName(), "Israel");
         assertEquals(list.getAt(2).getName(), "Francisco");
@@ -140,7 +144,7 @@ public class LinkedListTest {
         list.insert(reference, new Student("Lupita"), LinkedList.InsertPosition.BEFORE);
 
         // Then:
-        assertEquals(4, list.size());
+        assertEquals(4, list.getSize());
         assertEquals(list.getAt(0).getName(), "Lupita");
         assertEquals(list.getAt(1).getName(), "Ivan");
         assertEquals(list.getAt(2).getName(), "Israel");
@@ -161,7 +165,7 @@ public class LinkedListTest {
         list.insert(reference, new Student("Lupita"), LinkedList.InsertPosition.BEFORE);
 
         // Then:
-        assertEquals(4, list.size());
+        assertEquals(4, list.getSize());
         assertEquals(list.getAt(0).getName(), "Ivan");
         assertEquals(list.getAt(1).getName(), "Israel");
         assertEquals(list.getAt(2).getName(), "Lupita");
@@ -182,7 +186,7 @@ public class LinkedListTest {
         list.insert(reference, new Student("Lupita"), LinkedList.InsertPosition.BEFORE);
 
         // Then:
-        assertEquals(4, list.size());
+        assertEquals(4, list.getSize());
         assertEquals(list.getAt(0).getName(), "Ivan");
         assertEquals(list.getAt(1).getName(), "Lupita");
         assertEquals(list.getAt(2).getName(), "Israel");
@@ -203,7 +207,7 @@ public class LinkedListTest {
         list.insert(reference, new Student("Lupita"), LinkedList.InsertPosition.AFTER);
 
         // Then:
-        assertEquals(4, list.size());
+        assertEquals(4, list.getSize());
         assertEquals(list.getAt(0).getName(), "Ivan");
         assertEquals(list.getAt(1).getName(), "Lupita");
         assertEquals(list.getAt(2).getName(), "Israel");
@@ -224,7 +228,7 @@ public class LinkedListTest {
         list.insert(reference, new Student("Lupita"), LinkedList.InsertPosition.AFTER);
 
         // Then:
-        assertEquals(4, list.size());
+        assertEquals(4, list.getSize());
         assertEquals(list.getAt(0).getName(), "Ivan");
         assertEquals(list.getAt(1).getName(), "Israel");
         assertEquals(list.getAt(2).getName(), "Francisco");
@@ -245,7 +249,7 @@ public class LinkedListTest {
         list.insert(reference, new Student("Lupita"), LinkedList.InsertPosition.AFTER);
 
         // Then:
-        assertEquals(4, list.size());
+        assertEquals(4, list.getSize());
         assertEquals(list.getAt(0).getName(), "Ivan");
         assertEquals(list.getAt(1).getName(), "Israel");
         assertEquals(list.getAt(2).getName(), "Lupita");
